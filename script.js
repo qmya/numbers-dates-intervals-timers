@@ -251,3 +251,21 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+
+console.log(23 === 23.0); // true
+//Base 10 : 0 to 10
+//Base 2 : 0 and 1
+console.log(0.1 + 0.2); // 0.30000000000000004 what a joke 😂
+console.log(0.1 + 0.2 === 0.3); //false
+
+//Conversion
+console.log(Number('23')); //Converting string to number 😀
+console.log(+'23'); //When javascript saw the + sign it automatically convert the string to number 😀
+
+//Parsing Integer
+console.log(Number.parseInt('30px', 10)); //will give you 30
+console.log(Number.parseInt('e23', 10)); //NaN
+
+//Parsing decimals
+console.log(Number.parseInt('2.5rem')); //2
+console.log(Number.parseFloat('2.5rem')); //2.5
