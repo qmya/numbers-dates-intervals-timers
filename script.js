@@ -111,38 +111,56 @@ const now = new Date();
 console.log(now); // today: Wed Dec 23 2020 10:06:17 GMT-0500 (Eastern Standard Time)
 
 //❷ Way :
-Parsing the string
-console.log(new Date('Dec 23 2020 10:06:17'));
-console.log(new Date('August 11, 1995'));
-console.log(new Date('2019-11-18T21:31:17.178Z'));
+// Parsing the string
+// console.log(new Date('Dec 23 2020 10:06:17'));
+// console.log(new Date('August 11, 1995'));
+// console.log(new Date('2019-11-18T21:31:17.178Z'));
 
-//Month is a 0 base 0 - 11
-console.log(new Date(2037, 11, 19, 15, 23, 19));
+// //Month is a 0 base 0 - 11
+// console.log(new Date(2037, 11, 19, 15, 23, 19));
 
-//Javascript is so smart that it will change thatit dec because noov does have 31 days
-console.log(new Date(2020, 10, 31)); //Wed Dec 01 2020 00:00:00 GMT-0500 (Eastern Standard Time)
+// //Javascript is so smart that it will change thatit dec because noov does have 31 days
+// console.log(new Date(2020, 10, 31)); //Wed Dec 01 2020 00:00:00 GMT-0500 (Eastern Standard Time)
 
-//The Unix epoch is the time 00:00:00 UTC on 1 January 1970.
-console.log(new Date(0));
-console.log(new Date(3 * 24 * 60 * 60 * 1000));
-console.log(new Date(259200000));
+// //The Unix epoch is the time 00:00:00 UTC on 1 January 1970.
+// console.log(new Date(0));
+// console.log(new Date(3 * 24 * 60 * 60 * 1000));
+// console.log(new Date(259200000));
 
 //Working with dates
+// const future = new Date(2037, 11, 19, 15, 23);
+// console.log(future); //Whole date with time & day
+// console.log(future.getFullYear()); //2037
+// console.log(future.getMonth()); //December 👉🏽11
+// console.log(future.getDate()); //19
+// console.log(future.getDay()); //6 👉🏽 Sat (M, T, W, T, F, Sat, Sun)
+// console.log(future.getHours()); //15
+// console.log(future.getMinutes()); //23
+// console.log(future.getSeconds()); //00
+
+// //Some international time
+// console.log(future.toISOString()); //2037-12-19T20:23:00.000Z
+
+// console.log(future.getTime()); //2144866980000
+// console.log(future.getDate(2144866980000)); //19
+
+// future.setFullYear(2040);
+// console.log(future);
+
 const future = new Date(2037, 11, 19, 15, 23);
-console.log(future); //Whole date with time & day
-console.log(future.getFullYear()); //2037
-console.log(future.getMonth()); //December 👉🏽11
-console.log(future.getDate()); //19
-console.log(future.getDay()); //6 👉🏽 Sat (M, T, W, T, F, Sat, Sun)
-console.log(future.getHours()); //15
-console.log(future.getMinutes()); //23
-console.log(future.getSeconds()); //00
+console.log(+future);
 
-//Some international time
-console.log(future.toISOString()); //2037-12-19T20:23:00.000Z
+const numberOfDaysPassed = (date1, date2) => {
+  if (date1 < date2) {
+    const days = date2 - date1;
+    console.log(`Number of ${days}`);
+  } else {
+    const days = (date1 - date2) / (24 * 60 * 60 * 1000);
+    console.log(`Number of ${days}`);
+  }
+};
 
-console.log(future.getTime()); //2144866980000
-console.log(future.getDate(2144866980000)); //19
-
-future.setFullYear(2040);
-console.log(future);
+numberOfDaysPassed(
+  new Date(2037, 11, 19, 15, 23),
+  new Date(2037, 11, 10, 15, 23)
+);
