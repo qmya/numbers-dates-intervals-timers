@@ -164,3 +164,8 @@ numberOfDaysPassed(
   new Date(2037, 11, 19, 15, 23),
   new Date(2037, 11, 10, 15, 23)
 );
+
+//Gives you these dividers according to the country
+const numNew = 5643284376;
+
+console.log('US:', new Intl.NumberFormat('en-US').format(numNew)); //US: 5,643,284,376
