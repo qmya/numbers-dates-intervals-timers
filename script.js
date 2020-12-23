@@ -77,3 +77,29 @@ console.log(isEven(8));
 console.log(isEven(23));
 console.log(isEven(514));
 console.log(isEven(28));
+
+//BigInt
+//Numbers are represented by 64 bit either 64 zeros or ones
+console.log(2 ** 53 - 1); //biggest number that javascript can save it
+console.log(Number.MAX_SAFE_INTEGER);
+
+//ES20 we can save as number as a big as you want
+console.log(43267317624282748637282734683273643728736437n); //we put n at the end
+console.log(BigInt(56327846));
+
+//operations
+console.log(10000n + 10000n);
+
+console.log(43267819346728912873645728913746728n * 53627183746572813647281n);
+
+const huge = 5637289174628874654382n;
+const num = 23;
+// console.log(huge * num); //Can not mix BigInt with simple integer , Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+console.log(huge * BigInt(num));
+
+//Comparison
+console.log(20n > 15); //true
+console.log(20n === 20); //false
+console.log(typeof 20n); //bigInt
+
+//console.log(Math.sqrt(16n)); //Does not work on big int
