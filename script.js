@@ -167,5 +167,17 @@ numberOfDaysPassed(
 
 //Gives you these dividers according to the country
 const numNew = 5643284376;
+const options = {
+  style: 'currency',
+  currency: 'USD',
+  // useGrouping: false, //number is shown with a separators
+};
 
-console.log('US:', new Intl.NumberFormat('en-US').format(numNew)); //US: 5,643,284,376
+console.log('US:', new Intl.NumberFormat('en-US', options).format(numNew)); //US: 5,643,284,376
+
+console.log('Germany:', new Intl.NumberFormat('de-DE', options).format(numNew)); //Germany: 5.643.284.376
+
+console.log(
+  'Pakistan:',
+  new Intl.NumberFormat('ur-PK', options).format(numNew)
+); //Pakistan: 5,643,284,376
