@@ -63,3 +63,17 @@ console.log(Math.ceil(23.9)); //24
 
 console.log(Math.floor(23.3)); //23
 console.log(Math.floor(23.9)); //23
+
+//Remainder
+console.log(5 % 2); //remainder = 1
+console.log(5 / 2); //2.5
+
+//even remainder is 0
+console.log(6 % 2); //0
+console.log(6 / 2); //3
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(8));
+console.log(isEven(23));
+console.log(isEven(514));
+console.log(isEven(28));
