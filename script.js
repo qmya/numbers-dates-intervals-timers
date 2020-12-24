@@ -181,3 +181,11 @@ console.log(
   'Pakistan:',
   new Intl.NumberFormat('ur-PK', options).format(numNew)
 ); //Pakistan: 5,643,284,376
+
+//TIMERS: setTimeOut & setTimeInterval
+
+setTimeout(() => console.log('Here is you Pizza 🍕'), 3000); //After 3 seconds the pizza will arrive
+setTimeout(() => console.log('Here is you Pizza 🍕'), 1000); //After 1 seconds the pizza will arrive
+setTimeout(function () {
+  console.log('Here is you Pizza 🍕');
+}, 60); //After 60 seconds the pizza will arrive
