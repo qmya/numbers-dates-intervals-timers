@@ -183,7 +183,7 @@ console.log(
 ); //Pakistan: 5,643,284,376
 
 //TIMERS: setTimeOut & setTimeInterval
-//setTimeOut
+//setTimeOut: schedule time , runs once
 setTimeout(() => console.log('Here is you Pizza 🍕'), 3000); //After 3 seconds the pizza will arrive
 setTimeout(() => console.log('Here is you Pizza 🍕'), 1000); //After 1 seconds the pizza will arrive
 setTimeout(function () {
@@ -191,6 +191,7 @@ setTimeout(function () {
 }, 60); //After 60 seconds the pizza will arrive
 
 //Giving a argument and perimeter to the setTimeOUt like this
+
 const ingredients = ['spinach', 'mushroom', 'olives'];
 const pizzaOrder = setTimeout(
   function (ingr1, ingr2, ingr3) {
@@ -204,3 +205,9 @@ const pizzaOrder = setTimeout(
 console.log('waiting....');
 if (ingredients.includes('spinach')) clearTimeout(pizzaOrder);
 console.log('Contains spinach so no need to order pizza');
+
+//setTimeInterval
+setInterval(function () {
+  const now = new Date();
+  console.log(now.getSeconds());
+}, 1000); //after 1000secs will keep running: Wed Dec 23 2020 19:34:53 GMT-0500 (Eastern Standard Time)
